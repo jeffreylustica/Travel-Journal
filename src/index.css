@@ -113,6 +113,10 @@ h1{
 }
 
 /* Section */
+.section-container {
+  margin: 1.5em 0;
+}
+
 .cc-container-journal {
   display: grid;
   grid-template-columns: 1fr;
@@ -125,6 +129,10 @@ h1{
     "desc";
   padding: 2em 0;
   border-bottom: 1px solid #e2e2e2;
+}
+
+.cc-container-journal:last-child {
+  border-bottom: none;
 }
 
 .section-image {
@@ -159,8 +167,8 @@ h1{
   }
 
   .section-image {
-    max-height: 300px;
-    min-height: 280px;
+    max-height: 265px;
+    min-height: 300px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.19);
   }
 }
@@ -181,6 +189,18 @@ h1{
 
 .section-journal-desc {
   grid-area: desc;
+}
+
+.read-more {
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: var(--fw-bold);
+}
+
+.read-more:hover {
+  color: var(--clr-accent);
 }
 
 

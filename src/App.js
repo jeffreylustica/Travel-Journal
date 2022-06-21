@@ -16,7 +16,9 @@ export default function App() {
   return (
     <div className="main-container">
       <Header />
-      {sectionElements}
+      <div className="section-container">
+          {sectionElements}
+      </div>
     </div>
   )
 }

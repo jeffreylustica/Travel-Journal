@@ -1,10 +1,15 @@
-import React from "react"
+import React, {useState} from "react"
 
 export default function Section(props) {
     const {title, location, googleMapsLink, startDate, endDate, description, imageUrl} = props.item
+    const [readMore, setReadMoreText] = useState(false)
+
+    function toggleReadmore() {
+        setReadMoreText(prevReadMore => !prevReadMore)
+    }
 
     return (
-        <div className="section-journal">
+        // <div className="section-journal">
             <div className="cc-container cc-container-journal">
                 <img src={imageUrl} className="section-image"></img>
                 <div className="section-location">
@@ -17,11 +22,11 @@ export default function Section(props) {
                     <span className="section-journal-start-date">{startDate} - </span>
                     <span className="section-journal-end-date">{endDate}</span>
                 </div>
-                <p className="section-journal-desc" id="journal-desc">{description.slice(0,180)}
-                <span id="read-more-btn">...read more</span>
-                </p>
-                
+                <p className="section-journal-desc" id="journal-desc">{readMore ? description : 
+                description.slice(0,150)}
+                <span className="read-more" id="read-more-btn" onClick={toggleReadmore}>{readMore ? " -Read less" : " ...+Read more"}</span>
+                </p> 
             </div>
-        </div>
+        // </div>
     )
 }
